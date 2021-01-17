@@ -15,6 +15,15 @@ class String
   end
 
   def count_sentences
-    self.split.select{|s| s.sentence? or s.question? or s.exclamation?}.length
+    self.split do
+      binding.pry
+      select do |string| 
+        binding.pry 
+        string.sentence? or string.question? or string.exclamation?
+      end
+    end.length
+
   end
+
+
 end
